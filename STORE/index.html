@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nezuko's Store</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!--ICON-->
+    <link rel="icon" href="img/icon.png">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/8aa31bfc1b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <audio src="opening.mp3" autoplay="autoplay" loop="loop"></audio>
+
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="four columns">
+                <img src="img/logo.svg" id="logo">
+            </div>
+            <div class="two columns u-pull-right">
+                <ul>
+                    <li class="submenu">
+                            <img src="img/cart.png" id="img-carrito">
+                            <div id="carrito">
+                                    
+                                    <table id="lista-carrito" class="u-full-width">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+  </header>
+
+
+    <div id="hero">
+        <div class="container">
+            <div class="row">
+                    <div class="six columns">
+                        <div class="contenido-hero">
+                                <h2>Anime Merchandising</h2>
+                                <p>Todo a menos de $ 100.00</p>
+                                <form action="#" id="busqueda" method="post" class="formulario">
+                                    <input class="u-full-width" type="text" placeholder="¿Que te gustaría Comprar?" id="buscador">
+                                    <input type="submit" id="submit-buscador" class="submit-buscador">
+                                </form>
+                        </div>
+                    </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="barra">
+        <div class="container">
+            <div class="row">
+                    <div class="four columns icono icono1">
+                        <p>Más de 20 Categorias <br>
+                        Explora  los productos más recientes</p>
+                    </div>
+                    <div class="four columns icono icono2">
+                        <p>Diseños EXCLUSIVOS<br>
+                        Lucete con distintos estilos</p>
+                    </div>
+                    <div class="four columns icono icono3">
+                        <p>Entrega Rápida <br>
+                        Compra Cuando y donde SEA!</p>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="lista-cursos" class="container">
+        <h1 id="encabezado" class="encabezado">Nuestros Productos</h1>
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/P3.webp" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>  Nezukos T-shirt</h4>
+                        <p>T-shirt</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$25.99  <span class="u-pull-right ">$20.99</span></p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
+                    </div>
+                </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/P2.png" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Nezuko Funko</h4>
+                            <p>Funko's</p>
+                            <img src="img/estrellas.png">
+                            <p class="precio">$49.9  <span class="u-pull-right ">$18.99</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Agregar Al Carrito</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/P1.webp" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Nezuko Sweater</h4>
+                            <p>Sweater</p>
+                            <img src="img/estrellas.png">
+                            <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Agregar Al Carrito</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+
+        </div> <!--.row-->
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/41.1.png" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>Evergarden Cosplay</h4>
+                        <p>Cosplay</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$120  <span class="u-pull-right ">$99.99</span></p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="4">Agregar Al Carrito</a>
+                    </div>
+                </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/42.png" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Waifus Sweater</h4>
+                            <p>Sweater</p>
+                            <img src="img/estrellas.png">
+                            <p class="precio">$150  <span class="u-pull-right ">$68.99</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="5">Agregar Al Carrito</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/43.3.1.png" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>School Cosplay</h4>
+                            <p>Cosplay</p>
+                            <img src="img/estrellas.png">
+                            <p class="precio">$180  <span class="u-pull-right ">$99.99</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="6">Agregar Al Carrito</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+        </div> <!--.row-->
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/44.png" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>002 T-shirt</h4>
+                        <p>T-shirt</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$95  <span class="u-pull-right ">$72.90</span></p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="7">Agregar Al Carrito</a>
+                    </div>
+                </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/a2.1.png" class="imagen-curso u-full-width image-h">
+                        <div class="info-card">
+                            <h4>Waifus Sweater</h4>
+                            <p>Sweater</p>
+                            <img src="img/estrellas.png">
+                            <p class="precio">$180  <span class="u-pull-right ">$95.99</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="8">Agregar Al Carrito</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/a3.1.png" class="imagen-curso u-full-width image-h">
+                        <div class="info-card">
+                            <h4>Maid Cosplay</h4>
+                            <p>Cosplay</p>
+                            <img src="img/estrellas.png">
+                            <p class="precio">$140  <span class="u-pull-right ">$99.99</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="9">Agregar Al Carrito</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+        </div> <!--.row-->
+        <div class="row">
+                <div class="four columns">
+                    <div class="card">
+                        <img src="img/F1.webp" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Zero Two Framed Bust Crew Sweatshirt </h4>
+                            <p>Sweatshirt</p>
+                            <img src="img/estrellas.png">
+                            <p class="precio">$140.00  <span class="u-pull-right ">$59.95</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="10">Agregar Al Carrito</a>
+                        </div>
+                    </div> <!--.card-->
+                </div>
+                <div class="four columns">
+                        <div class="card">
+                            <img src="img/F2.1.png" class="imagen-curso u-full-width">
+                            <div class="info-card">
+                                <h4>Naruto Kakashi Chibi Holiday Sweater</h4>
+                                <p>Sweater</p>
+                                <img src="img/estrellas.png">
+                                <p class="precio">$67.90  <span class="u-pull-right ">$43.96</span></p>
+                                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="11">Agregar Al Carrito</a>
+                            </div>
+                        </div> <!--.card-->
+                </div>
+                <div class="four columns columnas-bajar">
+                        <div class="card">
+                            <img src="img/F3.webp" class="imagen-curso u-full-width">
+                            <div class="info-card">
+                                <h4>One Piece - Nico Robin Checker Hoodie</h4>
+                                <p>Sweatshirt</p>
+                                <img src="img/estrellas.png">
+                                <p class="precio">$129.90  <span class="u-pull-right ">$54.95</span></p>
+                                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="12">Agregar Al Carrito</a>
+                            </div>
+                        </div> <!--.card-->
+                </div>
+            </div> <!--.row-->
+    </div>  
+
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="f-sesen">
+          <div class="INFO-US">
+              <p>Comunicate con nosotros a nuestro correo 👇</p>
+              <a href="mailto:support@edwin4chg.com"><i class="fa-sharp fa-solid fa-envelope"></i></a>
+          </div>
+        </div> 
+          <div class="Email-wish">
+            <h2>Regístrate para recibir actualizaciones</h2>
+              <div class="subscribe-email">
+                <input type="email" name="EMAIL" placeholder="  Your e-mail address" required />
+                <button class="button button-primary" type="submit">Suscribir</button>
+              </div>
+          </div>
+          </div>
+          
+      </div>
+      <p class="copyright">Nezuko's Store | Todos los Derechos Reservados 2022 &copy;</p>
+  </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

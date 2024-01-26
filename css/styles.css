@@ -1,0 +1,1357 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;/*Resetear los rems => 62.5% equivalga a 10 px  de 16px, del tamaño original*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+
+}
+
+body{
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    align-items: center;
+}
+img{
+    max-width: 99%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*CARUSELL*/
+
+.slider {
+    position: relative;
+    /* top: 10%; */
+    left: 70%;
+    bottom: 60rem;
+    transform: translate(-20%, 0%);
+    width: 40rem;
+    height: 270px;
+    /*   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); */
+}
+  
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+}
+  
+#items {
+    width: 10000px;
+    position: relative;
+    top: 0;
+    left: -400px;
+}
+  
+#items.shifting {
+    transition: left 0.2s ease-out;
+}
+  
+.slide {
+    width: 400px;
+    height: 550px;
+    cursor: pointer;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 1s;
+    position: relative;
+  }
+  
+  .slider.loaded .slide:nth-child(2),
+  .slider.loaded .slide:nth-child(7) {
+    background: #ffcf47;
+    border-radius: 10px;
+  }
+  .slider.loaded .slide:nth-child(1),
+  .slider.loaded .slide:nth-child(6) {
+    background: #7adcef;
+    border-radius: 10px;
+  }
+  .slider.loaded .slide:nth-child(3) {
+    background: #dff8ec;
+    border-radius: 10px;
+  }
+  .slider.loaded .slide:nth-child(4) {
+    background: #a78df5;
+    border-radius: 10px;
+  }
+  .slider.loaded .slide:nth-child(5) {
+    background: #ff8686;
+    border-radius: 10px;
+  }
+  
+  .content {
+    width: 400px;
+    height: 560px;
+    border-radius: 10px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0), 0 0 30px rgba(0, 0, 0, 0.1) inset;
+    position: relative;
+    margin-top: 0px;
+  }
+  
+  .up {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px 10px 0 0;
+    background: rgba(28, 216, 210, 1);
+    background: rgba(28, 216, 210, 1);
+    background: -moz-linear-gradient(
+      top,
+      rgba(28, 216, 210, 1) 0%,
+      rgba(147, 237, 199, 1) 100%
+    );
+    background: -webkit-gradient(
+      left top,
+      left bottom,
+      color-stop(0%, rgba(28, 216, 210, 1)),
+      color-stop(100%, rgba(147, 237, 199, 1))
+    );
+    background: -webkit-linear-gradient(
+      top,
+      rgba(28, 216, 210, 1) 0%,
+      rgba(147, 237, 199, 1) 100%
+    );
+    background: -o-linear-gradient(
+      top,
+      rgba(28, 216, 210, 1) 0%,
+      rgba(147, 237, 199, 1) 100%
+    );
+    background: -ms-linear-gradient(
+      top,
+      rgba(28, 216, 210, 1) 0%,
+      rgba(147, 237, 199, 1) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      rgba(28, 216, 210, 1) 0%,
+      rgba(147, 237, 199, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1cd8d2', endColorstr='#93edc7', GradientType=0 );
+  }
+  
+  .producto {
+    width: 300px;
+    height: 400px;
+    background-size: 320px 540px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: calc(50% - 150px);
+    position: relative;
+    top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.16), 0 0px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+.pro_1 {
+    background-image: url("../img/41.png");
+}
+.pro_1ro img{
+    width: 100%
+}
+  
+.pro_2 {
+    background-image: url("../img/43.3.jpg");;
+}
+  
+.pro_3 {
+    background-image: url("../img/a2.jpg");;
+}
+.pro_4 {
+    background-image: url("../img/a1.jpg");
+}
+  
+.pro_5 {
+    background-image: url("../img/a3.jpg");;
+}
+  
+.price {
+    width: 0px;
+    height: 70px;
+    border-radius: 2px;
+    border-left: 40px solid #ff1f45;
+    border-right: 40px solid #ff1f45;
+    border-bottom: 20px solid transparent;
+    float: right;
+    margin-right: 0px;
+    top: -40px;
+    position: relative;
+  }
+  
+  .price p {
+    color: #ffffff;
+    width: 27px;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+  
+  .button {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    font-weight: bold;
+    padding: 14px 0px;
+    color: #ffffff;
+    border-radius: 5px;
+    position: relative;
+    background-color: #1cd8d2;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 0px 6px rgba(0, 0, 0, 0.1);
+    margin-left: calc(150px - 50px);
+    top: 70px;
+  }
+  
+  .button:hover {
+    background-color: #93edc7;
+    color: #ffffff;
+  }
+  
+  .control {
+    position: absolute;
+    top: 100%;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 20px;
+    margin-top: -20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+  
+  .prev,
+  .next {
+    background-size: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  
+  .prev {
+    background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
+    left: -20px;
+  }
+  
+.next {
+    background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+    right: -20px;
+}
+  
+.prev:active,
+.next:active {
+    transform: scale(0.8);
+}
+ 
+
+
+
+/*encabezado*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.bk-img{
+    background-image: url(../img/1037400.png);
+    height: 80rem;
+    background-size: cover;
+}
+.logo{
+    margin-top: 5rem;
+}
+.blan{
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.blan:hover{
+    font-weight: 500;
+    color: black;
+    background-color:white;
+    border: solid 2px black;
+}
+h1{
+    margin-bottom: 9rem;
+    font-size: 6rem;
+    width: 44rem;
+    padding-left: 15rem;
+    font-weight: 900;
+    text-shadow: -3px -3px 3px #fdfdff, 3px -3px 3px #fcfcff, -3px 3px 3px #939397, 3px 3px 3px #c8c8c8;
+}
+h1 span{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 12rem;
+}
+
+
+
+/*LO MAS NUEVO*/
+.Ofertas{
+    width: 96%;
+}
+.tazas h2{
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 5rem;
+}
+.barra{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10rem;
+}
+.navegacion{
+    padding: 10rem 0 0 0;
+    text-decoration: none;
+}
+.navegacion a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0 .5rem;
+    margin-left: 3rem;
+}
+.navegacion a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+    text-decoration: none;
+}
+.nuevo{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.tabla{
+    align-items: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3rem;
+    width: 33%;
+    transition: 0.3s;
+}
+.tabla:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    transition: 2s;
+}
+.tabla a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    margin: 0 1rem;
+    height: 3.5rem;
+}
+.Defin{
+    display: flex;
+    margin-top: 3rem;
+}
+.svg{
+    display: flex;
+    background-color: red;
+    border-radius: 5rem;
+    width: 4rem;
+    height: 4rem;
+    margin-top: 15%;
+    margin-right: -5rem;
+}
+.divd{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 0.8rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+}
+.pricee{
+    font-size: 1.6rem;
+    color: #ff00ff;
+}
+.ejmp-i{
+    width: 30rem;
+    margin: 2rem 0;
+}
+.tabla span{
+    text-decoration:line-through;
+    color: #859c8e;
+}
+
+/**<span>PRECIO REAL</span>**/
+.tabla span{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.titulo{
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.titulo:hover{
+    font-weight: 500;
+    color: black;
+    background-color:white;
+    border: solid 2px black;
+}
+.h3{
+    font-family: 'Caveat', cursive;
+    font-size: 5rem;
+    padding: 5rem 0 4rem 0;
+}
+
+
+/*MAIN*/
+
+.nuevo-c{
+    display: flex;
+    flex-direction: column;
+}
+.TenemoLM{
+    background-image: url(../img/elfribrain_nos_enamora_con_su_propia_versixn_de_nezuko_kamado_en_bikini.jpg_242310155.jpg);
+    height: 35rem;
+}
+.TenemoLM p{
+    font-size: 5rem;
+    font-weight: 900;
+}
+.TenemoLM span{
+    font-family: 'Rubik Glitch', cursive;
+    color: rgb(30, 118, 99);
+    font-weight: 400;
+}
+
+.p-creciendo{
+    padding-top: 7%;
+}
+#Button{
+    font-size: 3rem;
+    height: 7rem;
+    padding: 0 2rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    background-color: darkgoldenrod;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+}
+#Button:hover{
+    color: #000000;
+    border: solid 2px black;
+}
+
+/*MITAD - MITAD*/
+.nuevo-contenedor{
+    display: flex;
+    padding: 5rem;
+}
+.cincuenta{
+    width: 50%;
+    height: 63rem;
+    
+}
+.cincuenta:hover{
+    transition: 5s;
+}
+.nuevo-contenedor img{
+    width:70%;
+    border-radius: 2rem;
+    margin-top: 5rem;
+}
+.nuevo-contenedor img:hover{
+    border-radius: 4.5rem;
+    border: solid 3px black;
+}
+
+.img-cincuent img{
+    margin: 3rem 0 2rem 0;
+}
+.nuevo-contenedor p{
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+}
+.nuevo-contenedor h2{
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 2rem 0;
+}
+.nuevo-contenedor a{
+    margin-bottom: 3rem;
+}
+.nuevo-contenedor button{
+    height: 6rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+     text-align: center;	
+     text-decoration: none;
+     outline: none;
+     color: #fff;
+     background-color: darkgoldenrod;
+     border: none;
+     border-radius: 15px;
+     box-shadow: 0 9px rgb(15, 12, 12);
+}
+.nuevo-contenedor button:hover {
+    color: rgb(0, 0, 0);
+    box-shadow: none;
+    border: solid 2px black;
+}
+
+.nuevo-contenedor button:active {
+    background-color: #a03aa0;
+    box-shadow: 0 5px rgb(155, 155, 155);
+    transform: translateY(4px);
+  }
+
+/*PRODUCTOS - OFERTAS*/
+.Ofertas h2{
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 5rem;
+}
+.cuatro{
+    display: flex;
+    
+    justify-content: space-between;
+
+}
+
+.card{
+    background: #f5f5f5;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+}
+/**/
+    .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+  .card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  } /*MAÑANA - DARLE VUELTA A  LOS EFECTO, Y COLOR DE TEXTO NEGRO*/
+.texani{
+    color: #000000;
+}
+
+
+  /**/
+.card span{
+    text-decoration: line-through;
+}
+
+.card .aaa{
+    background-color: darkgoldenrod;
+    color: white;
+    border-top-color: white;
+    border-right-color: white;
+    cursor: pointer;
+    height: 5rem;
+    width: 15rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+.card .aaa:hover{
+    background-color: rgb(0, 0, 0);
+    color: darkgoldenrod;
+    border: solid 2px;
+}
+.view-all{
+    margin: 6rem 0;
+    font-size: 4rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-weight: 900;
+    font-family: cursive;
+    cursor: pointer;
+    background-color: darkgoldenrod;
+    color: rgb(0, 0, 0);
+    border-top-color: #000000;
+    border-left-color: #000000;
+    border-bottom-color: #00000000;
+    border-right-color: #00000000;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    outline: none;
+    box-shadow: 3px 3px 0px 3px rgb(15 12 12);
+}
+.view-all:hover{
+    box-shadow: none;
+    color: white;
+    border: solid 2px black;
+}
+
+/*SVJS-IMGs*/
+
+.SVJS-IMGs{
+    background-image: url(../img/all-nezuko-forms.png);
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.SVJS-IMGs h2{
+    font-family: 'Rubik Glitch', cursive;
+    color: rgb(30, 118, 99);
+    font-weight: 400;
+}
+.SVJS-IMGs button{
+    font-size: 3rem;
+    height: 7rem;
+    padding: 0 2rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    background-color: darkgoldenrod;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+    margin: 2rem 0 2rem 0;
+}
+.SVJS-IMGs button:hover{
+    background-color: rgb(255, 255, 255);
+    color: darkgoldenrod;
+    border-color: darkgoldenrod;
+}
+
+/*FOOTER*/
+.completo-ancho{
+    margin-top: 9rem;
+}
+.footer-ariba{
+    display: flex;
+}
+.f-sesen{
+    width: 60%;
+}
+.INFO-US{
+    text-align: initial;
+    width: 50%;
+    font-size: 1.5rem;
+}
+.INFO-US a{
+    text-decoration: none;
+    color: rgb(33, 5, 5);
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: 'Yuji Mai';
+}
+.INFO-US a:hover{
+    color: rgb(255, 252, 252);
+    background-color: #000000;
+    padding: 0 1rem;
+    border-radius: 2rem;
+}
+.brands{
+    width: 50%;
+    font-size: 3rem;
+    text-align: initial;
+    margin: 1.5rem 0;
+}
+.f-cuaren{
+    width: 30%;
+}
+/*nav*/
+.navvv{
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    width: 17rem;
+    padding-top: 0;
+    text-align: initial;
+}
+.navvv a{
+    color: #000000;
+    margin-bottom: 4rem;
+    text-transform: none;
+}
+.nav a:hover{
+    color:rgb(30, 118, 99);
+}
+/*CORREO*/
+.Email-wish{
+    font-size: 1.5rem;
+    text-align: initial;
+    margin-left: 2rem;
+    font-weight: 900;
+    
+}
+.subscribe-email{
+    display: flex;
+    flex-direction: column;
+}
+.subscribe-email input{
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 5rem;
+    border-radius: 2rem;
+    border: 1px solid;
+    margin-top: 1rem;
+}
+.subscribe-email button{
+    font-size: 2rem;
+    width: 19rem;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: darkgoldenrod;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(15 12 12);
+}
+
+.subscribe-email button:hover{
+    box-shadow: none;
+    background-color: black;
+    
+}
+.subscribe-email button a{
+    color: white;
+}
+footer p{
+    font-size: 2rem;
+    font-family: 'Rubik Glitch';
+    margin: 4rem 0;
+}
+/*pies*/
+.pies{
+    justify-content: space-between;
+    flex-direction: column;
+}
+.patita{
+    margin: 3rem;
+}
+.patita2 a:hover{
+    cursor: pointer;
+    font-size: x-large;
+    color: darkgoldenrod;
+}
+.patita2 {
+    font-size: xx-large;
+    flex-direction: column;
+}
+.fa-brands{
+    color: black;
+}
+
+/**/
+
+@media(max-width: 768px){
+    body{
+        max-width: 100%;
+    }
+    .wrapper{
+        margin-top: 13rem;
+    }
+    .tazas{
+        margin-top: 70rem;
+    }
+    .bk-img{
+        background-position: center center;
+        background-size: cover;
+        height: 85rem;
+    }
+    .encabezado{
+        margin-bottom: -8rem;
+    }
+    .barra{
+        display: inline-block;
+    }
+    .logo img{
+        width: 50rem;
+    /* margin-left: 1%; */
+        margin-top: 3rem;
+    }
+    .navegacion{
+        padding-top: 3rem;
+        display: inline-grid;
+    }
+    .navegacion .blan{
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+    h1{
+        margin-bottom: 8rem;
+        font-size: 4.8rem;
+        width: 97%;
+        padding: 0 0 0 3%;
+    }
+    h1 .span{
+        font-size: 7.5rem;
+        padding-left: 1%;
+    }
+    .slider{
+        display: contents;
+        
+    }
+    
+    .slide{
+        margin: 0 0.6rem;
+        width: 350px;
+
+    }
+    .slide:nth-child(1){
+        margin-left: 9rem;
+    }
+    .slide .content{
+        width: 350px;
+    }
+    .slide .content .up{
+        width: 350px;
+    }
+    #prev{
+        visibility: hidden;
+        background-image: none;
+        left: 0;
+    }
+    #next{
+        visibility: hidden;
+        background-image: none;
+        right: 0;
+    }
+    h2{
+        margin-bottom: 3rem;
+    }
+    .tazas{
+        margin-top: 67rem;
+    }
+    .tazas h2{
+        padding-top: 4rem;
+    }
+    .nuevo{
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 3rem;
+    }
+    .nuevo .tabla{
+        width: 70%;
+        margin: 4.5rem 15%;
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    }
+    .TenemoLM{
+        height: 36rem;
+        border-radius: 2rem;
+        width: 99%;
+        margin-left: 0.5%;
+    }
+    .TenemoLM img{
+        background-position: center center;
+        background-size: cover;
+    }
+    .TenemoLM p{
+        font-size: 5rem;
+        width: 97%;
+    }
+    #button{
+        margin: 2rem 0 0 0;
+    }
+    #Button{
+        margin-top: 3rem;
+    }
+    .SVJS-IMGs img{
+        margin-left: 10%;
+        width: 80%;
+    }
+    .card .aaa{
+        border: solid 4px black;
+        width: 20rem;
+        box-shadow: 0px 0px 52px 0px rgb(0 0 0 / 75%);
+    }
+
+    /*NUEVO CONTENEDOR*/
+    .nuevo-contenedor{
+        display: flex;
+        flex-direction: column;
+    }
+    .tabla{
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+        width: 99%;
+        margin-bottom: 5rem;
+        height: auto;
+    }
+    .tabla p{
+        width: 90%;
+    }
+
+    /**/
+    .cuatro{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+    .SVJS-IMGs h2{
+        font-size: 3rem;
+    }
+
+    .veintic{
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+
+    /**/
+
+    .footer-ariba{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+    }
+    .f-sesen{
+        width: 75%;
+        margin-left: 20%;
+    }
+    .INFO-US{
+        width: 100%;
+    }
+    .INFO-US a{
+        margin-left: 35%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        padding: 0 1rem;
+    }
+    .subscribe-email input{
+        border: solid 3px black;
+        width: 80%;
+    }
+
+    /**/
+    .patita2{
+        width: 100%;
+        padding-left: 10%;
+        margin-top: 3rem;
+    }
+    .Email-wish{
+        height: 30rem;
+        
+    }
+}
+
+@media(max-width: 480px){
+    body{
+        max-width: 100%;
+    }
+    .wrapper{
+        margin-top: 13rem;
+    }
+    .tazas{
+        margin-top: 70rem;
+    }
+    .bk-img{
+        background-position: center center;
+        background-size: cover;
+    }
+    .encabezado{
+        margin-bottom: -8rem;
+    }
+    .barra{
+        display: inline-block;
+    }
+    .logo img{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 3rem;
+    }
+    .navegacion{
+        padding-top: 3rem;
+        display: inline-grid;
+    }
+    .navegacion .blan{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    h1{
+        margin-bottom: 18rem;
+        font-size: 4.8rem;
+        width: 97%;
+        padding: 0 0 0 3%;
+    }
+    h1 .span{
+        font-size: 7.5rem;
+        padding-left: 1%;
+    }
+    .slider{
+        display: contents;
+        
+    }
+    
+    .slide{
+        margin: 0 0.6rem;
+        width: 350px;
+
+    }
+    .slide:nth-child(1){
+        margin-left: 9rem;
+    }
+    .slide .content{
+        width: 350px;
+    }
+    .slide .content .up{
+        width: 350px;
+    }
+    #prev{
+        visibility: hidden;
+        background-image: none;
+        left: 0;
+    }
+    #next{
+        visibility: hidden;
+        background-image: none;
+        right: 0;
+    }
+    h2{
+        margin-bottom: 3rem;
+    }
+    .tazas{
+        margin-top: 67rem;
+    }
+    .nuevo{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .nuevo .tabla{
+        width: 70%;
+        margin: 4.5rem 15%;
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    }
+    .TenemoLM{
+        height: 36rem;
+        border-radius: 2rem;
+        width: 99%;
+        margin-left: 0.5%;
+    }
+    .TenemoLM img{
+        background-position: center center;
+        background-size: cover;
+    }
+    .TenemoLM p{
+        font-size: 3rem;
+        width: 97%;
+    }
+    #button{
+        margin: 2rem 0 0 0;
+    }
+    #Button{
+        margin-top: 3rem;
+    }
+    .SVJS-IMGs img{
+        margin-left: 10%;
+        width: 80%;
+    }
+    .card .aaa{
+        border: solid 4px black;
+        width: 20rem;
+        box-shadow: 0px 0px 52px 0px rgb(0 0 0 / 75%);
+    }
+
+    /*NUEVO CONTENEDOR*/
+    .nuevo-contenedor{
+        display: flex;
+        flex-direction: column;
+    }
+    .tabla{
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+        width: 99%;
+        margin-bottom: 5rem;
+        height: auto;
+    }
+    .tabla p{
+        width: 90%;
+    }
+
+    /**/
+    .cuatro{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+    .SVJS-IMGs h2{
+        font-size: 3rem;
+    }
+
+    .veintic{
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+
+    /**/
+
+    .footer-ariba{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+    }
+    .f-sesen{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .INFO-US{
+        width: 100%;
+    }
+    .INFO-US a{
+        margin-left: 35%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        padding: 0 1rem;
+    }
+    .subscribe-email input{
+        border: solid 3px black;
+        width: 80%;
+    }
+
+    /**/
+    .patita2{
+        width: 100%;
+        padding-left: 10%;
+        margin-top: 3rem;
+    }
+    .Email-wish{
+        height: 30rem;
+    }
+
+}
+
+@media(max-width: 400px){
+    body{
+        max-width: 100%;
+    }
+    .bk-img{
+        background-position: center center;
+        background-size: cover;
+    }
+    .encabezado{
+        margin-bottom: -8rem;
+    }
+    .barra{
+        display: inline-block;
+    }
+    .logo img{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 3rem;
+    }
+    .navegacion{
+        padding-top: 3rem;
+        display: inline-grid;
+    }
+    .navegacion .blan{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    h1{
+        margin-bottom: 18rem;
+        font-size: 4rem;
+        width: 36rem;
+    }
+    h1 .span{
+        font-size: 6rem;
+        padding-left: 1rem;
+    }
+    .slider{
+        display: contents;
+        
+    }
+    .slide{
+        margin: 0 0.6rem;
+    }
+    .SVJS-IMGs h2{
+        font-size: 3rem;
+    }
+    #prev{
+        visibility: hidden;
+        background-image: none;
+        left: 0;
+    }
+    #next{
+        visibility: hidden;
+        background-image: none;
+        right: 0;
+    }
+    h2{
+        margin-bottom: 3rem;
+        font-size: 3.5rem;
+    }
+    .tazas{
+        margin-top: 67rem;
+    }
+    .nuevo{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .nuevo .tabla{
+        width: 80%;
+        margin: 4.5rem 10%;
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    }
+    .TenemoLM{
+        height: 33rem;
+        border-radius: 2rem;
+        width: 100%;
+    }
+    .TenemoLM img{
+        background-position: center center;
+        background-size: cover;
+    }
+    .TenemoLM p{
+        font-size: 3rem;
+    }
+    #button{
+        margin: 2rem 0 0 0;
+        margin-top: 3rem;
+    }
+    .SVJS-IMGs img{
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    /*NUEVO CONTENEDOR*/
+    .nuevo-contenedor{
+        display: flex;
+        flex-direction: column;
+    }
+    .tabla{
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+        width: 99%;
+        margin-bottom: 5rem;
+        height: auto;
+    }
+
+    /**/
+    .cuatro{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .veintic{
+        margin-bottom: 3rem;
+    }
+
+    /**/
+
+    .footer-ariba{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+    }
+    .f-sesen{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .INFO-US{
+        width: 100%;
+    }
+    .INFO-US a{
+        margin-left: 35%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        padding: 0 1rem;
+    }
+    .subscribe-email input{
+        border: solid 3px black;
+        width: 80%;
+    }
+
+    /**/
+    .patita2{
+        width: 100%;
+        padding-left: 10%;
+        margin-top: 3rem;
+    }
+    .Email-wish{
+        height: 38rem;
+    }
+    .button-primary{
+        margin-left: 15%;
+    }
+    
+}

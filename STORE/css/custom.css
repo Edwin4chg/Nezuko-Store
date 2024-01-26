@@ -1,0 +1,365 @@
+html {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+img{
+  border-radius: 3px;
+}
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/1037400.png);
+
+  background-size: cover;
+  background-position: center;
+  animation: color-change 10s linear infinite;
+  animation-delay: 1s;
+            }
+            /*adding rain img and making opacity 0*/
+  body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png);
+    animation: rain 0.4s linear infinite;
+    opacity: 0;
+  }
+            /* just changing the position of image 
+          of rain using keyframes*/
+  @keyframes rain {
+    0% {
+      background-position: 0 0;
+      opacity: 1;
+    }
+  
+    100% {
+      background-position: 8% 80%;
+      opacity: 1;
+    }
+  }
+            /* applying filter at different angle
+          on diffrent interval using keyframe*/
+  @keyframes color-change {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+
+
+h1 {
+  text-align: center;
+}
+h2 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+header {
+  padding: 20px 0 0 0;
+  
+  text-align: center;
+}
+@media (min-width: 750px) {
+  header {
+      text-align: left;
+  }
+}
+
+.borrar-curso {
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.image-h{
+  height: 29rem;
+}
+ul {
+  list-style: none;
+}
+#img-carrito{
+  width: 5rem;
+}
+#logo{
+  height: 14rem;
+}
+#hero {
+  
+  height: 350px;
+  background-size: cover;
+}
+#encabezado {
+  margin: 5rem 0;
+}
+.submenu {
+  position: relative;
+}
+
+.submenu #carrito{
+  display: none;
+}
+.submenu:hover #carrito{
+  display: block;
+  position: absolute;
+  right:0;
+
+  top:100%;
+  z-index: 1;
+  background-color: white;
+  padding: 20px;
+  min-height: 400px;
+  min-width: 300px;
+}
+.vacio {
+  padding: 10px;
+  background-color: crimson;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+.contenido-hero {
+  margin-top: 80px;
+  color: white;
+}
+.contenido-hero form {
+  position: relative;
+  margin-bottom: 0;
+}
+.contenido-hero form #buscador {
+  height: 50px;
+  margin-bottom: 0;
+}
+.contenido-hero form .submit-buscador {
+  position: absolute;
+  right:0;
+  top:0;
+  height: 100%;
+  padding: 0;
+  display: block;
+  text-indent: -9999px;
+  width: 50px;
+  background-image: url(../img/lupa.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  border:none;
+}
+
+
+.barra {
+  padding: 20px 0;
+  background: #741d51; /* Old browsers */
+  background: -moz-linear-gradient(left, #741d51 0%, #e44e52 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #741d51 0%,#e44e52 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #741d51 0%,#e44e52 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#741d51', endColorstr='#e44e52',GradientType=1 ); /* IE6-9 */
+}
+
+.barra p {
+  margin:0;
+  color: white;
+}
+.icono {
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 60px;
+  background-size: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+@media (min-width: 750px) {
+  .icono {
+      margin-bottom:0;
+  }
+}
+.icono1 {
+  background-image: url(../img/icono1.png);
+}
+.icono2 {
+  background-image: url(../img/icono2.png);
+}
+.icono3 {
+  background-image: url(../img/icono3.png);
+}
+
+#lista-cursos .row {
+  margin-bottom:20px;
+}
+.agregar-carrito {
+  margin:10px 0;
+}
+
+.card {
+  text-align: center;
+  border: 1px solid #e1e1e1;
+  background: white;
+}
+@media (min-width: 550px) {
+  .card {
+      text-align: left;
+  }
+}
+.info-card  {
+  padding: 10px 20px;
+}
+
+.info-card p, 
+.card h4 {
+  margin-bottom: 5px;
+}
+.info-card .precio {
+  text-decoration: line-through;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.info-card .precio span {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+
+.footer {
+  margin-top: 40px;
+  border-top:1px solid #aaa;;
+  padding-top: 40px;   
+}
+.footer .menu a{
+display: block;
+margin-bottom: 10px;
+text-decoration: none;
+}
+
+/**/
+
+/*CORREO*/
+.Email-wish{
+  font-size: 1.5rem;
+  text-align: initial;
+  margin-left: 2rem;
+  font-weight: 900;
+}
+.subscribe-email{
+  display: flex;
+  flex-direction: column;
+}
+.subscribe-email input{
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 5rem;
+  border-radius: 2rem;
+}
+.subscribe-email button{
+  font-size: 2rem;
+  width: 19rem;
+  text-transform: uppercase;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: darkgoldenrod;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(15 12 12);
+}
+.subscribe-email button:hover{
+  box-shadow: none;
+  background-color: black;
+}
+
+.copyright{
+  font-size: 2rem;
+  font-family: 'Rubik Glitch';
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.f-sesen{
+  width: 60%;
+}
+.INFO-US{
+  text-align: center;
+  width: 50%;
+  font-size: 1.5rem;
+}
+.INFO-US a{
+  text-decoration: none;
+  color: black;
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: 'Yuji Mai';
+}
+.INFO-US a:hover{
+  color: darkgoldenrod;
+}
+
+.footer .container{
+  display: flex;
+  flex-direction: row;
+}
+
+.columnas-bajar{
+  margin-bottom: 5rem;
+}
+@media(max-width: 480px){
+  .row{
+    display: block;
+  }
+  .card{
+    background-color: transparent;
+    border: none;
+  }
+  body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png);
+    animation: rain 0.4s linear infinite;
+    opacity: 0;
+  }
+
+}
+@media(max-width: 768px){
+  .row{
+    display: block;
+  }
+  .card{
+    background-color: transparent;
+    border: none;
+  }
+  body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png);
+    animation: rain 0.4s linear infinite;
+    opacity: 0;
+  }
+  .info-card a{
+    font-size: 8px;
+  }
+
+
+}

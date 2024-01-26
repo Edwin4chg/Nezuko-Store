@@ -1,0 +1,656 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;/*Resetear los rems => 62.5% equivalga a 10 px  de 16px, del tamaño original*/
+
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+
+}
+
+body{
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    background-color: bisque;
+    
+}
+img{
+    max-width: 100%;
+}
+article{
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    max-width: 80rem;
+    padding: 2rem 1.5rem;
+    margin: 0 auto;
+    color: #241623;
+    background: #eef2f4;
+    margin-bottom: 3rem;
+}
+.article h1,
+.article p{
+    text-align: center;
+}
+/*CARUSELL*/
+/*encabezado*/
+.barra {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10rem;
+    align-items: center;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.bk-img{
+    background-image: url(../img/1037400.png);
+    background-size: cover;
+}
+.blan{
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.blan:hover{
+    font-weight: 500;
+    color: black;
+    background-color:white;
+    border: solid 2px black;
+}
+h2{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700 ;
+    
+}
+
+/*nav*/
+
+.navegacion {
+    text-decoration: none;
+    display: flex;
+}
+.navegacion a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0 0.5rem;
+    margin-left: 3rem;
+}
+.navegacion a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+    text-decoration: none;
+}
+
+/**/
+
+h1 {
+    font-weight: 900;
+    font-size: 2.7rem;
+  }
+  
+  a {
+    color: currentcolor;
+  }
+  
+  /* Utilities */
+  
+  /*.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+  }*/
+  
+  /* Composition */
+  .team {
+    /*--flow-space: 2em;*/
+    display: flex;
+  }
+  
+  /* Blocks */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    aspect-ratio: 1/1;
+    position: relative;
+    padding: 1.5rem;
+    color: #ffffff;
+    backface-visibility: hidden;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  .profile::before,
+  .profile::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*inset: 0;*/
+    top: 0;
+    left: 0;
+  }
+  
+  .profile::before {
+    background: linear-gradient(
+      to top,
+      hsl(0 0% 0% / 0.79) 0%,
+      hsl(0 0% 0% / 0.787) 7.8%,
+      hsl(0 0% 0% / 0.779) 14.4%,
+      hsl(0 0% 0% / 0.765) 20.2%,
+      hsl(0 0% 0% / 0.744) 25.3%,
+      hsl(0 0% 0% / 0.717) 29.9%,
+      hsl(0 0% 0% / 0.683) 34.3%,
+      hsl(0 0% 0% / 0.641) 38.7%,
+      hsl(0 0% 0% / 0.592) 43.3%,
+      hsl(0 0% 0% / 0.534) 48.4%,
+      hsl(0 0% 0% / 0.468) 54.1%,
+      hsl(0 0% 0% / 0.393) 60.6%,
+      hsl(0 0% 0% / 0.31) 68.3%,
+      hsl(0 0% 0% / 0.216) 77.3%,
+      hsl(0 0% 0% / 0.113) 87.7%,
+      hsl(0 0% 0% / 0) 100%
+    );
+    transition: 300ms opacity linear;
+  }
+  
+  .profile::after {
+    background: linear-gradient(
+      45deg,
+      hsl(5 97% 63% / 0.7) 0,
+      hsl(5 97% 63% / 0) 100%
+    );
+    opacity: 0;
+    transition: 300ms opacity linear;
+  }
+  
+  .profile > * {
+    z-index: 1;
+  }
+  
+  .profile img {
+    width: 100%;
+    height: 100%;
+    
+    top: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 3rem;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter 200ms ease, transform 250ms linear;
+  }
+  
+  .profile h2,
+  .profile p {
+    transform: translateY(2ex);
+  }
+  
+  .profile h2 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: 0.03ch;
+    transition: 300ms transform ease;
+  }
+  
+  .profile p {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .profile p {
+    opacity: 0;
+    transition: 300ms opacity linear, 300ms transform ease-in-out;
+  }
+  
+  .profile:focus {
+    outline: 0.5rem solid white;
+    outline-offset: -0.5rem;
+  }
+  
+  .profile:hover :is(h2, p),
+  .profile:focus :is(h2, p) {
+    transform: none;
+  }
+  
+  .profile:hover::after,
+  .profile:focus::after,
+  .profile:hover::before,
+  .profile:focus::before {
+    opacity: 0.7;
+  }
+  
+  .profile:hover p,
+  .profile:focus p {
+    opacity: 1;
+    transition-delay: 200ms;
+  }
+  
+  .profile:hover img,
+  .profile:focus img {
+    filter: grayscale(0);
+    transform: scale(1.05) rotate(1deg);
+  }
+  
+/*tabla*/
+
+.tabla3{
+    background-color: aliceblue;
+    padding: 1.5rem;
+    box-sizing: content-box;
+    border-radius: 1.5rem;
+    margin: auto auto auto 15rem;
+}
+.formulario fieldset{
+    background-color: antiquewhite;
+    border: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+.formulario input{
+    padding-bottom: 15px;
+    border-radius: 5px;
+    align-items: center;
+    border-style: solid;
+    border: 0;
+    font-size: large;
+    padding: 1.5rem 15rem;
+}
+.formulario label{
+    padding-bottom: 15px;
+    border-radius: 5px;
+    border-bottom: 15px;
+    align-items: center;
+    margin: 0 3rem;
+    text-transform: uppercase;
+}
+  
+.form2{
+    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+.form2 label{
+    font-size: large;
+}
+.form2 input:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+}
+.formulario textarea{
+        padding-bottom: 15px;
+        border-radius: 5px;
+        align-items: center;
+        margin: 0 3rem;
+        border-style: solid;
+        border: 0;
+        padding: .7rem;
+        margin: auto 2rem auto 2.5rem;
+        padding: 1.5rem;
+}
+.form2 textarea:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+}
+
+.chiquito{
+        text-transform: uppercase;
+        font-size: large;
+        font-weight: bolder;
+        color:red;
+        margin-top: 2rem;
+}
+
+.boton{
+    margin: 2rem 15rem auto 15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.boton button{
+    padding: 2rem;
+    background-color:darkgoldenrod;
+    border: 0;
+    color: aliceblue;
+    font-size: large;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.boton button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    color: black;
+}
+/*FOOTER*/
+.completo-ancho{
+    margin-top: 9rem;
+}
+.footer-ariba{
+    display: flex;
+}
+.f-sesen{
+    width: 60%;
+}
+.INFO-US{
+    text-align: center;
+    width: 50%;
+    font-size: 1.5rem;
+}
+.INFO-US a{
+    text-decoration: none;
+    color: black;
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Yuji Mai';
+}
+.INFO-US a:hover{
+    color: darkgoldenrod;
+}
+
+.brands{
+    width: 50%;
+    font-size: 3rem;
+    text-align: initial;
+    margin: 1.5rem 0;
+}
+.f-cuaren{
+    width: 30%;
+}
+/*nav*/
+
+.navvv a{
+    color: #000000;
+    margin-bottom: 4rem;
+    text-transform: none;
+}
+
+/*CORREO*/
+.Email-wish{
+    width: 35rem;
+    font-size: 1.5rem;
+    text-align: initial;
+    margin-left: 2rem;
+    font-weight: 900;
+}
+.subscribe-email{
+    display: flex;
+    flex-direction: column;
+}
+.subscribe-email input{
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 5rem;
+    border-radius: 2rem;
+}
+.subscribe-email button{
+    font-size: 2rem;
+    width: 19rem;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color:darkgoldenrod;
+    border: none;
+    border-radius: 15px;
+}
+.subscribe-email button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    color: black
+}
+
+footer p{
+    font-size: 2rem;
+    font-family: 'Rubik Glitch';
+    margin: 4rem 0;
+}
+.imagen2{
+    width: 200px;
+    border-radius: 2rem;
+}
+.imagen2:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    color: black
+}
+/*pies*/
+.pies{
+    justify-content: space-between;
+    flex-direction: column;
+}
+.patita{
+    margin: 3rem;
+}
+.patita2 a:hover{
+    cursor: pointer;
+    font-size: x-large;
+    color: black;
+}
+.patita2 {
+    font-size: xx-large;
+    flex-direction: column;
+}
+/*navegacion2*/
+.navegacion2 a{
+    text-decoration: none;
+    font-size: x-large;
+    color: #fff;
+    margin-left: 3rem;
+    background-color:darkgoldenrod;
+    padding: 1.2rem;
+    border-radius: 2rem;
+}
+.navegacion2 a:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 52px 0px rgba(0,0,0,0.75);
+    color: black;
+}
+.contact_form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.mapa{
+    width: 400px;
+    margin-right: 15rem;
+}
+.form2{
+    margin: auto 15rem;
+}
+.cubo{
+    padding: 0 30rem;
+}
+
+/**/
+
+
+
+body{
+box-sizing: border-box;
+font-size: 16px;
+margin: 0;
+padding: 0;
+}
+
+/* MENU */
+
+section{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    margin-bottom: 3rem;
+    background-color: #000000;
+    border-radius: 3px;
+    color: white;
+}
+
+.miembrosLista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.miembro{
+    max-width: 35%;
+}
+.miembro h2{
+    font-size: 1.8rem;
+}
+.Email-wish h2{
+    font-size: 1.9rem;
+}
+
+@media(max-width: 1280px) {
+    .navegacion a{
+        font-size: 2rem;
+        margin: 1rem 2rem;
+    }
+    footer{
+        padding: 2rem;
+    }
+    .patita2{
+        margin-top: -5rem;
+        height: 10rem;
+    }
+    .f-sesen{
+        margin-left: -15rem;
+    }
+    .miembro h2{
+        font-size: 1.7rem;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    .INFO-US p{
+        font-size: 1.75rem;
+      }
+    .Email-wish h2{
+        font-size: 1.8rem;
+    }
+}
+
+@media(max-width: 1024px) {
+    .navegacion a{
+        font-size: 1.75rem;
+        margin: 1rem 1.8rem;
+    }
+    footer{
+        padding: 1.75rem;
+    }
+    .patita2{
+        margin-top: -5rem;
+        height: 10rem;
+    }
+    .f-sesen{
+        margin-left: -15rem;
+    }
+    .miembro h2{
+        font-size: 1.6rem;
+    }
+    h1{
+        font-size: 2.3rem;
+    }
+    .INFO-US p{
+        font-size: 1.69rem;
+    }
+    .Email-wish h2{
+        font-size: 1.7rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .navegacion a{
+        font-size: 1.4rem;
+        margin: 1rem .6rem;
+    }
+    footer{
+        padding: 1.5rem;
+    }
+    .patita2{
+        margin-top: -5rem;
+        height: 10rem;
+    }
+    .f-sesen{
+        margin-left: -15rem;
+    }
+    .miembro h2{
+        font-size: 1.5rem;
+    }
+    h1{
+        font-size: 2.1rem;
+    }
+    .INFO-US p{
+        font-size: 1.63rem;
+      }
+    .Email-wish h2{
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width: 480px) {
+    .navegacion a{
+        font-size: 1rem;
+        margin: .5rem;
+    }
+    footer{
+        padding: 1rem;
+    }
+    .patita2{
+        margin-top: -5rem;
+        height: 10rem;
+    }
+    .f-sesen{
+        margin-left: -15rem;
+    }
+    .miembro h2{
+        font-size: 1.4rem;
+    }
+    h1{
+        font-size: 1.9rem;
+    }
+    .INFO-US p{
+        font-size: 1.57rem;
+    }
+    .Email-wish h2{
+        font-size: 1.5rem;
+    }
+}
